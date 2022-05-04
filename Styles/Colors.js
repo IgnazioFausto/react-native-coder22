@@ -1,6 +1,7 @@
 export const colors = {
-    gray:'#E0D880',
+    primary:'#6A00F4',
     white:'#FFFFFF',
-    brown:'#4D4D4D',
+    secondary:'#2D00F7',
     black:'#000000',
+    pink: '#E500A4',
 }

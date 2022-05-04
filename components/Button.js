@@ -2,28 +2,27 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { colors } from '../Styles/Colors'
 
-const Boton = ({onPress}) => {
+const ButtonCustom = ({onPress}) => {
     return (
-        <TouchableOpacity style={styles.boton} onPress={onPress} >
-
-            <Text style={styles.texto}>
-                Add todo
-            </Text>
+        <TouchableOpacity style={styles.button} onPress={onPress}>
+            <Text style={styles.text}>Agregar tarea</Text>
         </TouchableOpacity>
     )
 }
 
-export default Boton
+export default ButtonCustom
 
 const styles = StyleSheet.create({
-    boton: {
-        backgroundColor: colors.black,
-        padding: 5,
-        borderRadius: 8,
+    button: {
+        backgroundColor: colors.primary,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: colors.pink,
     },
-    texto: {
+    text: {
+        fontSize: 18,
         color: colors.white,
-        padding: 1,
     }
-
 })
