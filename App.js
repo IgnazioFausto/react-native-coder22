@@ -1,4 +1,4 @@
-
+import { colors } from './Styles/Colors';
 import { StyleSheet, View } from 'react-native';
 import Layout from './Screens/Layout';
 
@@ -14,7 +14,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
   },

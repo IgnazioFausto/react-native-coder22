@@ -36,11 +36,14 @@ const styles = StyleSheet.create({
     itemList: {
         backgroundColor: colors.primary,
         width: '95%',
+        height: '50%',
         padding: 20,
-        flex: 0.8,
+        flex: 1,
+        textAlign: 'center',
     },
     emptyList: {
         color: colors.white,
         fontSize: 20,
+        textAlign: 'center',
     }
 })

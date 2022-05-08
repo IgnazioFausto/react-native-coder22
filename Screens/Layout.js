@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         marginTop: 0,
+        height: '100%',
         backgroundColor: colors.primary,
     },
    
