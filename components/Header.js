@@ -22,7 +22,7 @@ const Header = ({handleAdd}) => {
                 onChangeText={setInput}
                 value={input}
             />
-            <ButtonCustom onPress={()=> handleAddAux()} />
+            <ButtonCustom title="+" onPress={()=> handleAddAux()} />
         </View>
     )
 }

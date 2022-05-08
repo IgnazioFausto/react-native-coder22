@@ -1,12 +1,13 @@
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Text } from 'react-native'
 import { useState } from 'react';
 import Header from '../components/Header';
 import Lista from '../components/Lista';
 import CustomModal from '../components/Modal';
 import { colors } from '../Styles/Colors';
+import Boton from '../components/Button';
 const Layout = () => {
 
-    
+
     const [todoList, setTodoList] = useState([]);
     const [todoSelected, setTodoSelected] = useState({});
     const [modalVisible, setModalVisible] = useState(false);
@@ -15,6 +16,10 @@ const Layout = () => {
         {
             setTodoList([...todoList, { id: Date.now(), todo: input }]);
         }
+    }
+
+    const DeleteAll = () => {
+        setTodoList([]);
     }
 
     const handleModal = (todoSelected) => {
@@ -43,14 +48,21 @@ const Layout = () => {
 
     return (
         <View style={styles.container}>
-            <Header handleAdd={handleAdd}/>
-            <Lista handleModal={handleModal} todoList={todoList}/>
+            <Header handleAdd={handleAdd} />
+            {todoList.length !== 0 && (
+                <>
+                    <Boton onPress={ () => DeleteAll()} title="Eliminar todo" ></Boton>
+                    <Text style={styles.tareas}>Tareas</Text>
+                </>
+                )
+            }
+            <Lista handleModal={handleModal} todoList={todoList} />
             <CustomModal
                 modalVisible={modalVisible}
-                setModalVisible = {setModalVisible}
-                handleEdit = {handleEdit}
-                handleDelete = {handleDelete}
-                todoSelected = {todoSelected}
+                setModalVisible={setModalVisible}
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+                todoSelected={todoSelected}
             />
         </View>
     )
@@ -68,6 +80,14 @@ const styles = StyleSheet.create({
         height: '100%',
         backgroundColor: colors.primary,
     },
-   
-    
+    tareas: {
+        color: colors.pink,
+        fontSize: 30,
+        marginTop: 20,
+        fontWeight: 'bold',
+        textDecorationLine: 'underline',
+        textDecorationColor: colors.white,
+        textAlign: 'center',
+    }
+
 })
